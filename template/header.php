@@ -2,16 +2,20 @@
     <title>FurniturLife</title>
     <!--Mengambil framerk template dari materializecss -->
     <!-- Compiled and minified CSS -->
+
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style type="text/css">
         .brand{
             background: #0F0F0F !important;
         }
         .brand-text{
-            color:#0F0F0F !important;
+            color: #0F0F0F !important;
         }
-        .btn{
-            border-radius: 5%;
+        form{
+            max-width: 460px;
+            margin: 20px auto;
+            padding: 20px;
         }
     </style>
 </head>
