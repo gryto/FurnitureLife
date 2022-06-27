@@ -26,6 +26,7 @@ explode(',', $tabel_produk[0]['deskripsi_produk'])
 <?<php
 //menampilkan header
 include "template/header.php";
+
 //melakukan ridirect jika bukan admin
 if(!isset($_SESSION['user'])|$checkrole!=1){
    header("location:login.php");
@@ -33,8 +34,12 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 
 ?>
 
+<?php include('template/header.php')?>
+
+
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="template/css/style.css">
 
     <h4 class ="center grey-text">Halo, Selamat Datang</h4>
 
@@ -48,7 +53,7 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
                         <div><?php echo htmlspecialchars($tabel_produks['deskripsi_produk']); ?></div>
                     </div>
                     <div class="card-action right-align">
-                        <a href="#" class="brand-text">more info</a>
+                        <a href="produk/details.php?ID_produk=<?php echo $tabel_produks['ID_produk']?>" class="brand-text">more info</a>
                     </div>
                 </div>
             </div>
@@ -64,3 +69,5 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 
     </body>
 </html>
+
+<?php include('template/footer.php')?>

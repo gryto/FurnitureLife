@@ -74,6 +74,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="../template/css/style.css">
     <!-- Membuat form add untuk memasukkan data-->
     <section class="container black-text">
         <h4 class=center>Tambah Produk</h4>

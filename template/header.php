@@ -28,10 +28,10 @@
         <!-- membuat navbar mengubah warna menjadi abu - abu-->
         <nav class="white z-depth-0">
             <div class="container">
-                <a href="index.php" class="brand-logo brand-text">FurnitureLife</a>
+                <a href="dashboard.php" class="brand-logo brand-text">FurnitureLife</a>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="../login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
+                    <li><a href="login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
                 </ul>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
