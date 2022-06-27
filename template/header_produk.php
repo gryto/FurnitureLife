@@ -2,7 +2,6 @@
     <title>FurniturLife</title>
     <!--Mengambil framerk template dari materializecss -->
     <!-- Compiled and minified CSS -->
-
     <link rel="stylesheet" href="template/css/style.css">
     <style type="text/css">
         .brand{
@@ -32,10 +31,6 @@
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
                     <li><a href="../login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
-                </ul>
-                <!-- membuat navbar versi mobile -->
-                <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="produk/add.php" class="btn brand z-depth-0">Tambah Produk</a></li>
                 </ul>
             </div>
         </nav>

@@ -1,3 +1,28 @@
+<?php
+
+$tabel_produk = '';
+
+include('template/config/db_connect.php');
+
+//Membuat query untuk semua informasi produk
+$sql = 'SELECT nama_produk, deskripsi_produk, harga_produk, ID_produk FROM tabel_produk';
+
+//Untuk membuat query dan mendapatkan hasil
+$result = mysqli_query($conn, $sql);
+
+//fetching hasil dari baris sebagai array
+$tabel_produk = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+//hasil free dari memori
+mysqli_free_result($result);
+
+//menutup koneksinya
+mysqli_close($conn);
+
+explode(',', $tabel_produk[0]['deskripsi_produk'])
+
+?>
+
 <?<php
 //menampilkan header
 include "template/header.php";
@@ -11,12 +36,31 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 <!DOCTYPE html>
 <html>
 
-    <div class="jumbroton jumbroton-fluid text-center">
-        <div class="container">
-            <h1 class="display-4"> Halo, Selamat Datang! </h1>
-            </h1>
-        </div>
+    <h4 class ="center grey-text">Halo, Selamat Datang</h4>
+
+<div class="container">
+    <div class="row">
+        <?php foreach($tabel_produk as $tabel_produks){  ?>
+            <div class="col s6 md3">
+                <div class="card z-depth-0">
+                    <div class="card-content center">
+                        <h6><?php echo htmlspecialchars($tabel_produks['nama_produk']); ?></h6>
+                        <div><?php echo htmlspecialchars($tabel_produks['deskripsi_produk']); ?></div>
+                    </div>
+                    <div class="card-action right-align">
+                        <a href="#" class="brand-text">more info</a>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+            <?php if(count($tabel_produk) >= 4): ?>
+                <p> Lihat lainnya >>></p>
+            <?php else: ?>
+                <p> <<< Lihat halaman awal</p>
+            <?php endif; ?>
     </div>
+</div>
 
     </body>
 </html>
