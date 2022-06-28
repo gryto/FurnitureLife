@@ -4,7 +4,7 @@ include("template/config/db_connect.php");
 
 $checkRole = '';
 
-$checkRole !=0 ? header('Location: index.php') : '';
+$checkRole !=0 ? header('Location: dashboard.php') : '';
 
 ?>
 
@@ -93,9 +93,7 @@ $checkRole !=0 ? header('Location: index.php') : '';
         //fetching hasil dari baris sebagai array
         $tabel_pelanggan = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        $query = "
-        SELECT * FROM tabel_pelanggan
-        where username = '$username' && password='$password'";
+        $sql = "SELECT * FROM tabel_pelanggan WHERE username = '$username' && password='$password'";
 
         //ekseskusi pada query
         $eksekusi =$conn->query($query);
@@ -110,20 +108,21 @@ $checkRole !=0 ? header('Location: index.php') : '';
             //jika admin
             if($checkRole == 1) {
                 //Menampilkan notifikasi 
-                echo "<script> alert('Login telah berhasil, admin'); window.location.herf='dashboard.php' </script>";
+                echo "<script type='text/javascript'> alert('Login telah berhasil, admin'); window.location.herf='dashboard.php'; </script>";
             } else {
                 //Menampilkan notifikasi pelanggan
-                echo "<script> alert('Login telah berhasil, pelanggan'); window.location.herf='index.php' </script>";
+                echo "<script type='text/javascript'> alert('Login telah berhasil, pelanggan'); window.location.herf='index.php'; </script>";
             } 
         }
             
             else {
                 //Menampilkan notifikasi gagal login
-                echo "<script> alert('Anda gagal login'); </script>";
+                echo "<script type='text/javascript'> alert('Anda gagal login'); </script>";
             }
         
     }
     ?>
+
 
 
 

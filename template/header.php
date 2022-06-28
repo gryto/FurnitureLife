@@ -3,7 +3,7 @@
     <!--Mengambil framerk template dari materializecss -->
     <!-- Compiled and minified CSS -->
 
-    <link rel="stylesheet" href="template/css/style.css">
+    <link rel="stylesheet" href="template/css/style.css" type="text/css">
     <style type="text/css">
         .brand{
             background: #0F0F0F !important;
@@ -22,6 +22,14 @@
             margin: 20px auto;
             padding: 20px;
         }
+        .chair{
+            width: 100px;
+            margin: 40px auto -30px;
+            display: block;
+            position: relative;
+            top: -30px;
+        }
+
     </style>
 </head>
     <body class="grey lighten-4">

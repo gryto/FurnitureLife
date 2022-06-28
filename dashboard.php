@@ -40,16 +40,32 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="template/css/style.css">
+<style type="text/css">
+        .chair{
+            width: 80px;
+            margin: 40px auto -80px;
+            display: block;
+            float: left;
+            position: relative;
+            top: -30px;
+            margin-left: 40px;
+        }
+    </style>
 
-    <h4 class ="center grey-text">Halo, Selamat Datang</h4>
+    <h4 class ="center grey-text">Produk Tersedia</h4>
 
 <div class="container">
     <div class="row">
         <?php foreach($tabel_produk as $tabel_produks){  ?>
+
             <div class="col s6 md3">
                 <div class="card z-depth-0">
+                <img src="template/img/armchair.svg" class="chair" >
                     <div class="card-content center">
+                        
                         <h6><?php echo htmlspecialchars($tabel_produks['nama_produk']); ?></h6>
+                    </div>
+                    <div class="card-content">
                         <div><?php echo htmlspecialchars($tabel_produks['deskripsi_produk']); ?></div>
                     </div>
                     <div class="card-action right-align">
@@ -57,6 +73,7 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
                     </div>
                 </div>
             </div>
+            
             <?php } ?>
 
             <?php if(count($tabel_produk) >= 4): ?>

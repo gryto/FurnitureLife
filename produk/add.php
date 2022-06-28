@@ -61,7 +61,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
             //menyimpan ke database dan mengecek
             if(mysqli_query($conn, $sql)){
                 //sukses
-                header('Location: ../index.php');
+                header('Location: ../dashboard.php');
             } else {
                 //error
                 echo 'query eror: ' . mysqli_error($conn);
