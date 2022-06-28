@@ -1,0 +1,24 @@
+{
+  "name": "furniturelife",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dashboard.php",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gryto/FurnitureLife.git"
+  },
+  "author": "Solihah Nur Fajriani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gryto/FurnitureLife/issues"
+  },
+  "homepage": "https://github.com/gryto/FurnitureLife#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
+  }
+}
