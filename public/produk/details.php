@@ -36,16 +36,36 @@ if(isset($_GET['ID_produk'])){
 <div class="container center">
     <?php if($tabel_produks): ?>
 
-        <h4><?php echo htmlspecialchars($tabel_produks['nama_produk']); ?></h4>
-        <h6>Deskripsi: </h6>
-        <p><?php echo htmlspecialchars($tabel_produks['deskripsi_produk']); ?></p>
-        <p>Harga: <?php echo htmlspecialchars($tabel_produks['harga_produk']); ?></p>
 
-        <!-- Menghapus Form -->
-        <form action="details.php" methode="REQUEST">
-            <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
-            <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
-        </form>
+        <div class="row">
+            <div class="col s12">
+                <form class="white" action="">
+                    <h4><?php echo htmlspecialchars($tabel_produks['nama_produk']); ?></h4>
+                    <h6>Deskripsi: </h6>
+                    <p><?php echo htmlspecialchars($tabel_produks['deskripsi_produk']); ?></p>
+                    <p>Harga: <?php echo htmlspecialchars($tabel_produks['harga_produk']); ?></p>
+                </form>
+            </div>
+            <div class="col s6 m6 l3">
+                <!-- Menghapus Form -->
+                <form action="details.php" methode="REQUEST">
+                <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
+                <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0">
+                </form>
+            </div>
+            <div class="col s6 m6 l3">
+                <!-- Memperbaharui Form -->
+                <form action="details.php" methode="GET">
+                    <input type="hidden" name="id_to_update" value="<?php echo $tabel_produks['ID_produk'] ?>">
+                    <input type="submit" name="update" value="Update" class="btn brand z-depth-0">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
 
     <?php else: ?>
 

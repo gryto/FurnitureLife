@@ -61,7 +61,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
             //menyimpan ke database dan mengecek
             if(mysqli_query($conn, $sql)){
                 //sukses
-                header('Location: ../index.php');
+                header('Location: ../dashboard.php');
             } else {
                 //error
                 echo 'query eror: ' . mysqli_error($conn);
@@ -75,6 +75,8 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../template/css/style.css">
+
+
     <!-- Membuat form add untuk memasukkan data-->
     <section class="container black-text">
         <h4 class=center>Tambah Produk</h4>
@@ -89,7 +91,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
             <input type="text" name="harga_produk" value="<?php echo htmlspecialchars ($harga_produk) ?>">
             <div class="red-text"><?php echo $errors['harga_produk']; ?></div>
             <button class="center">
-                <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
+                <input type="submit" name="submit" value="submit" class="btn brand z-depth-0 waves-effect waves-light">
             </button>
         </form>
     </section>
