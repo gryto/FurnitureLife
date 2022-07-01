@@ -39,7 +39,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
             <input type="text" name="harga_produk" value="<?php echo htmlspecialchars ($harga_produk) ?>">
             <div class="red-text"><?php echo $errors['harga_produk']; ?></div>
             <button class="center">
-                <input type="update" name="update" value="update" class="btn brand z-depth-0">
+                <input type="update" name="update" value="update" class="btn btn-sm brand z-depth-0">
             </button>
         </form>
     </section>

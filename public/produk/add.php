@@ -97,7 +97,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
     </section>
     
 
-</body>
+
 </html>
 
 <?php
