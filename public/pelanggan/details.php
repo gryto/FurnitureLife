@@ -1,7 +1,7 @@
 <?php
 
 include('../template/config/db_connect.php');
-include('delete.php');
+
 
 
 //mengecek GET request ID_produk parameter
@@ -35,8 +35,6 @@ if(isset($_GET['ID_produk'])){
 
 <div class="container center">
     <?php if($tabel_produks): ?>
-
-
         <div class="row">
             <div class="col s12">
                 <form class="white" action="">
@@ -46,7 +44,7 @@ if(isset($_GET['ID_produk'])){
                     <p>Harga: <?php echo htmlspecialchars($tabel_produks['harga_produk']); ?></p>
                 </form>
             </div>
-            <div class="col s6 m6 l3">
+            <div class="col s12">
                 <!-- Menghapus Form -->
                 <form action="details.php" methode="REQUEST">
                 <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
@@ -54,12 +52,6 @@ if(isset($_GET['ID_produk'])){
                 </form>
             </div>
         </div>
-
-
-
-
-
-
     <?php else: ?>
 
         <h5>Mohon maaf. Tidak ada produk yang tersedia.</h5>

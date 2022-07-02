@@ -11,7 +11,7 @@
         .brand-1{
             color: #0f0f0f !important;
             background-color: #FFFFFF !important;
-            border: 1px solid transparent;
+            border: 1px solid;
             border-color: #0f0f0f !important;
         }
         .brand-text{

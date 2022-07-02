@@ -10,9 +10,9 @@ include "../template/header.php";
 
 <div class="tab-pane fade show active" id="show-item" role="tabpanel" aria-labelledby="home-tab">
     <!-- DataTales Example -->
-    <div class="card shadow mb-4 mt-2">
+    <div class="card mb-4 mt-2">
         <div class="card-body">
-          <div class="table-responsive">
+          <div class="table-responsive highlight">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>

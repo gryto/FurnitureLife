@@ -34,7 +34,7 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 
 ?>
 
-<?php include('../template/header.php')?>
+<?php include('../template/header_produk.php')?>
 
 
 <!DOCTYPE html>
