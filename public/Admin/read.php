@@ -43,13 +43,22 @@ include "../template/header_produk.php";
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../template/css/style.css">
+<style type="text/css">
+       .bold { font-weight: bold; }
+       table {width: 50%;
+        background-color: white;
+            }
+       .head {
+            background-color: black;
+            }
+</style>
 
     <div class="content read">
         <h4 class="center grey-text">Data Produk</h4>
         <a href="../produk/add.php" class="btn brand z-depth-0">Tambah Produk</a>
-        <table>
-            <thead>
-                <tr>
+        <table class="highlight">
+            <thead class="head">
+                <tr class="bold white-text">
                     <td>ID</td>
                     <td>Nama Produk</td>
                     <td>Deskripsi</td>
@@ -70,7 +79,7 @@ include "../template/header_produk.php";
                             <!-- Menghapus Form -->
                             <form action="details.php" methode="REQUEST">
                             <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
-                            <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0">
+                            <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0 waves-effect">
                             </form>
                         </div>
                         <div class="col s6 m6 l3">
