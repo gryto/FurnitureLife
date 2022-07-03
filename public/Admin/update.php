@@ -1,4 +1,6 @@
 <?php
+
+$tabel_produk = '';
 include("../template/config/db_connect.php");
 //menampilkan header
 include ("../template/header_produk.php");
@@ -8,13 +10,26 @@ $deskripsi_produk = $nama_produk = $harga_produk =  $ID_produk ='';
 //jika ada inputan yang eror
 $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
+$sql = "SELECT * FROM tabel_produk WHERE ID_produk = '$ID_produk'";
+
+//Untuk membuat query dan mendapatkan hasil
+$result = mysqli_query($conn, $sql);
+
+//fetching hasil dari baris sebagai array
+$tabel_produk = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+print_r($tabel_produk);
+
+
+
 //untuk mendapatkan data yang diinput
     if(isset($_POST['submit'])){
 
         //htmlspecialcharacter untuk menjaga dari malicious attack
 
         //Memeriksa ID_produk
-		if(empty($_POST['ID_produk'])){
+		if(empty($_PUT['ID_produk'])){
 			$errors['ID_produk'] = 'ID produk dibutuhkan <br />';
 		} else{
 			$ID_produk = $_POST['ID_produk'];
@@ -23,7 +38,7 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
 			}
 		}
         //Memeriksa nama_produk
-		if(empty($_POST['nama_produk'])){
+		if(empty($_PUT['nama_produk'])){
 			$errors['nama_produk'] = 'Nama produk dibutuhkan <br />';
 		} else{
 			$nama_produk = $_POST['nama_produk'];
@@ -33,7 +48,7 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
 		}
 
         //Memeriksa deskripsi_produk
-        if(empty($_POST['deskripsi_produk'])){
+        if(empty($_PUT['deskripsi_produk'])){
             $errors['deskripsi_produk'] = 'Setidaknya satu produk dibutuhkan <br />';
         } else {
             $deskripsi_produk = $_POST['deskripsi_produk'];
@@ -43,7 +58,7 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
         }
 
         //Memeriksa harga_produk
-		if(empty($_POST['harga_produk'])){
+		if(empty($_PUT['harga_produk'])){
 			$errors['harga_produk'] = 'Deskripsi dibutuhkan <br />';
 		} else{
 			$harga_produk = $_POST['harga_produk'];
@@ -81,7 +96,7 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
 
     <!-- Membuat form create untuk memasukkan data-->
     <section class="container black-text">
-        <h4 class= center>Tambah Produk</h4>
+        <h4 class= center>Ubah Produk</h4>
         <form class="white" action="create.php" method="POST">
             <label>ID Produk:</label>
             <input type="text" name="ID_produk" value="<?php echo htmlspecialchars ($ID_produk) ?>">

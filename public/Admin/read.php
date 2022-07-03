@@ -89,7 +89,7 @@ include "../template/header_produk.php";
                                 </div>
                                 <div>
                                     <!-- Memperbaharui Form -->
-                                    <form action="update.php" methode="GET">
+                                    <form action="update.php?ID_produk=<?=$row["ID_produk"]; ?>" methode="PUT">
                                         <input type="hidden" name="id_to_update" value="<?php echo $tabel_produks['ID_produk'] ?>">
                                         <input type="submit" name="update" value="Update" class="btn brand z-depth-0">
                                     </form>
