@@ -44,16 +44,12 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 			}
 		}
 
-
-
         if(array_filter($errors)){
             //echo 'Terdapat eror pada form';
         }else{
-
             $nama_produk = mysqli_real_escape_string($conn, $_POST['nama_produk']);
             $deskripsi_produk = mysqli_real_escape_string($conn, $_POST['deskripsi_produk']);
             $harga_produk = mysqli_real_escape_string($conn, $_POST['harga_produk']);
-
 
             //membuat sql
             $sql ="INSERT INTO tabel_produk(nama_produk, deskripsi_produk, harga_produk) VALUE('$nama_produk', '$deskripsi_produk', '$harga_produk')";
@@ -66,9 +62,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
                 //error
                 echo 'query eror: ' . mysqli_error($conn);
             }
-
         }
-
     } // akhir dari pemeriksaan dengan POST
 ?>
 
@@ -79,7 +73,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
     <!-- Membuat form add untuk memasukkan data-->
     <section class="container black-text">
-        <h4 class=center>Tambah Produk</h4>
+        <h4 class= center>Tambah Produk</h4>
         <form class="white" action="add.php" method="POST">
             <label>Nama Produk:</label>
             <input type="text" name="nama_produk" value="<?php echo htmlspecialchars ($nama_produk) ?>">
@@ -95,8 +89,6 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
             </button>
         </form>
     </section>
-    
-
 
 </html>
 

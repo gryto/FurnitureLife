@@ -55,17 +55,12 @@ if(isset($_GET['ID_produk'])){
             </div>
             <div class="col s6 m6 l3">
                 <!-- Memperbaharui Form -->
-                <form action="details.php" methode="GET">
+                <form action="edit.php" methode="GET">
                     <input type="hidden" name="id_to_update" value="<?php echo $tabel_produks['ID_produk'] ?>">
                     <input type="submit" name="update" value="Update" class="btn brand z-depth-0">
                 </form>
             </div>
         </div>
-
-
-
-
-
 
     <?php else: ?>
 

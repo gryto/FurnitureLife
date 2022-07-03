@@ -23,8 +23,6 @@ explode(',', $tabel_produk[0]['deskripsi_produk'])
 ?>
 
 <?<php
-//menampilkan header
-include "template/header.php";
 
 //melakukan ridirect jika bukan admin
 if(!isset($_SESSION['user'])|$checkrole!=1){
@@ -37,7 +35,7 @@ if(!isset($_SESSION['user'])|$checkrole!=1){
 
 <?php
 //menampilkan footer
-include "../template/header.php";
+include "../template/header_produk.php";
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +54,9 @@ include "../template/header.php";
 
     <div class="content read">
         <h4 class="center grey-text">Data Produk</h4>
+        <!-- membuat navbar versi mobile -->
+        <a href="create.php" class="btn brand z-depth-0">Tambah Produk</a>
+
         <!--<a href="../produk/add.php" class="btn brand z-depth-0">Tambah Produk</a>-->
         <div class="row">
             <div class="col s12 m4 l2"><p></p></div>

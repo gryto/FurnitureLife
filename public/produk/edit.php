@@ -11,16 +11,11 @@ $deskripsi_produk = $nama_produk = $harga_produk = '';
 $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
 //untuk mendapatkan data yang diinput
-    if(isset($_GET['submit'])){
-        //htmlspecialcharacter untuk menjaga dari malicious attack
-
-        
-
-        
+    if(isset($_POST['submit'])){
+        //htmlspecialcharacter untuk menjaga dari malicious attack  
 
     } // akhir dari pemeriksaan dengan POST
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -42,8 +37,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
                 <input type="update" name="update" value="update" class="btn btn-sm brand z-depth-0">
             </button>
         </form>
-    </section>
-    
+    </section>   
 
 </body>
 </html>
