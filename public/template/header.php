@@ -49,7 +49,7 @@
                 </ul>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="produk/add.php" class="btn brand z-depth-0">Tambah Produk</a></li>
+                    <li><a href="../Admin/create.php" class="btn brand z-depth-0">Tambah Produk</a></li>
                 </ul>
             </div>
         </nav>

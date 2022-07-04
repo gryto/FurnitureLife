@@ -19,25 +19,19 @@ mysqli_free_result($result);
 mysqli_close($conn);
 
 explode(',', $tabel_produk[0]['deskripsi_produk'])
-
 ?>
 
 <?<php
-
 //melakukan ridirect jika bukan admin
 if(!isset($_SESSION['user'])|$checkrole!=1){
    header("location:login.php");
 }
-
-
 ?>
-
 
 <?php
 //menampilkan footer
-include "../template/header_produk.php";
+include "../template/header.php";
 ?>
-
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../template/css/style.css">
@@ -49,19 +43,22 @@ include "../template/header_produk.php";
             }
        .head {
             background-color: black;
+            text-align: center;
             }
+        .tambah{
+            margin: 20px 3px 3px 0px;
+        }
 </style>
 
     <div class="content read">
         <h4 class="center grey-text">Data Produk</h4>
-        <!-- membuat navbar versi mobile -->
-        <a href="create.php" class="btn brand z-depth-0">Tambah Produk</a>
-
         <!--<a href="../produk/add.php" class="btn brand z-depth-0">Tambah Produk</a>-->
         <div class="row">
             <div class="col s12 m4 l2"><p></p></div>
             <div class="col s12 m4 l8" >
-                <table class="highlight">
+                <!-- membuat navbar versi mobile -->
+                <!-- <a href="create.php" class="btn brand z-depth-0 tambah">Tambah Produk</a>-->
+                <table class="highlight ">
                     <thead>
                         <tr class="head bold white-text">
                             <td>ID</td>
@@ -80,19 +77,21 @@ include "../template/header_produk.php";
                             <td><?=$tabel_produks['deskripsi_produk']?></td>
                             <td><?=$tabel_produks['harga_produk']?></td>
                             <td class="actions">
-                                <div class="">
-                                    <!-- Menghapus Form -->
-                                    <form action="delete.php" methode="REQUEST">
-                                        <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
-                                        <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0 waves-effect">
-                                    </form>
-                                </div>
-                                <div>
-                                    <!-- Memperbaharui Form -->
-                                    <form action="update.php?ID_produk=<?=$row["ID_produk"]; ?>" methode="PUT">
-                                        <input type="hidden" name="id_to_update" value="<?php echo $tabel_produks['ID_produk'] ?>">
-                                        <input type="submit" name="update" value="Update" class="btn brand z-depth-0">
-                                    </form>
+                                <div class="row">
+                                <div class="col s5">
+                                        <!-- Menghapus Form -->
+                                        <form action="delete.php" methode="REQUEST">
+                                            <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
+                                            <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0 waves-effect">
+                                        </form>
+                                    </div>
+                                    <div class="col s5">
+                                        <!-- Memperbaharui Form -->
+                                        <form action="update.php" methode="PUT">
+                                            <input type="hidden" name="id_to_update" value="<?php echo $tabel_produks['ID_produk'] ?>">
+                                            <input type="submit" name="update" value="Update" class="btn brand z-depth-0">
+                                        </form>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
