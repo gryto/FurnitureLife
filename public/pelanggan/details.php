@@ -1,8 +1,6 @@
 <?php
-
+//koneksi database
 include('../template/config/db_connect.php');
-
-
 
 //mengecek GET request ID_produk parameter
 if(isset($_GET['ID_produk'])){
@@ -20,10 +18,7 @@ if(isset($_GET['ID_produk'])){
 
     mysqli_free_result($result);
     mysqli_close($conn);
-
-
 }
-
 ?>
 
 <!DOCTYPE html>

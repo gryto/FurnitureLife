@@ -10,12 +10,14 @@ $deskripsi_produk = $nama_produk = $harga_produk =  $ID_produk ='';
 //jika ada inputan yang eror
 $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
+//$ID_produk = $_GET['ID_produk'];
+
 //membuat query untuk mengambil ID produk
 $sql = "SELECT * FROM tabel_produk WHERE ID_produk = '$ID_produk'";
 
 
 //untuk mendapatkan data yang diinput
-    if(isset($_POST['submit'])){
+    if(isset($_POST['update'])){
 
         //htmlspecialcharacter untuk menjaga dari malicious attack
 
@@ -95,7 +97,7 @@ $sql = "SELECT * FROM tabel_produk WHERE ID_produk = '$ID_produk'";
             <input type="text" name="nama_produk" value="<?php echo htmlspecialchars ($nama_produk) ?>">
             <div class="red-text"><?php echo $errors['nama_produk']; ?></div>
             <label>Deskripsi Produk:</label>
-            <input type="text" name="deskripsi_produk" value="<?php echo htmlspecialchars ($deskripsi_produk) ?>">
+            <textarea class="input-control" name="deskripsi_produk" value="<?php echo htmlspecialchars ($deskripsi_produk) ?>"></textarea><br>
             <div class="red-text"><?php echo $errors['deskripsi_produk']; ?></div>
             <label>Harga Produk</label>
             <input type="text" name="harga_produk" value="<?php echo htmlspecialchars ($harga_produk) ?>">

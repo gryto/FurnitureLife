@@ -3,9 +3,26 @@
 include("template/config/db_connect.php");
 
 $username =  $password = $role ='';
-
+/*
 //jika ada inputan yang eror
 $errors = array('username'=>'','password'=>'');
+
+if(mysqli_query($conn, $sql)){
+    //sukses
+    echo "
+    <script>
+    alert('Login telah berhasil, pelanggan')
+    document.location.href = 'pelanggan/dashboard.php'
+    </script>
+    ";
+} else {
+    echo "
+    <script>
+    alert('Login telah berhasil, pelanggan')
+    document.location.href = 'Admin/read.php'
+    </script>
+    ";
+}
 
 if(isset($_POST["login"]))
 {
@@ -13,7 +30,7 @@ if(isset($_POST["login"]))
 	$pass =$_POST["password"];
 
 //======================================================================================
-
+/*
     // menyeleksi data user dengan username dan password yang sesuai
     $data_user = mysqli_query($conn,"SELECT * FROM tabel_pelanggan WHERE username='$user' AND password='$pass'");
     // menghitung jumlah data yang ditemukan
@@ -65,17 +82,17 @@ if(isset($_POST["login"]))
         header("location:index.php?pesan=gagal");
     }
     
-
+*/
 //=========================================================================================
 
-/*
+
     $sql= "SELECT * FROM tabel_pelanggan WHERE username ='$username' AND password = '$password' ";
 
     $result=mysqli_query($conn,$sql);
 
 	$tabel_pelanggan=mysqli_fetch_all($result);
 
-	if($tabel_pelanggan["role"]=="pelanggan")
+	if($user == $username && $pass = $password)
 	{	
 
         echo "
@@ -106,9 +123,9 @@ if(isset($_POST["login"]))
         </script>
         ";
 	}
-*/
 
 
-}
+
+
 
 ?>
