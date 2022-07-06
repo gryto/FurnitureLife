@@ -45,7 +45,7 @@
                 <a href="../../../../FurnitureLife/FurnitureLife/public/pelanggan/dashboard.php" class="brand-logo brand-text">F<span class="ur">ur</span>niture<span class="life">Life</span></a>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
+                    <li><a href="../login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
                 </ul>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">

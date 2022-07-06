@@ -1,6 +1,7 @@
 <?php
+//definisi variabel tabel_produk
 $tabel_produk = '';
-
+//mengkoneksikan databsi yang disimpan pada folder berikut
 include('../template/config/db_connect.php');
 
 //Membuat query untuk semua informasi produk

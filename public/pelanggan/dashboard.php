@@ -1,5 +1,4 @@
 <?php
-
 $tabel_produk = '';
 
 include('../template/config/db_connect.php');

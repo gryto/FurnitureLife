@@ -12,15 +12,6 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
     if(isset($_POST['submit'])){
         //htmlspecialcharacter untuk menjaga dari malicious attack
 
-        //Memeriksa ID_produk
-		if(empty($_POST['ID_produk'])){
-			$errors['ID_produk'] = 'ID produk dibutuhkan <br />';
-		} else{
-			$ID_produk = $_POST['ID_produk'];
-			if(!preg_match('/^[0-9]+$/', $ID_produk)){
-				$errors['ID_produk'] = 'ID produk harus berupa angka';
-			}
-		}
         //Memeriksa nama_produk
 		if(empty($_POST['nama_produk'])){
 			$errors['nama_produk'] = 'Nama produk dibutuhkan <br />';
@@ -36,7 +27,7 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
             $errors['deskripsi_produk'] = 'Setidaknya satu produk dibutuhkan <br />';
         } else {
             $deskripsi_produk = $_POST['deskripsi_produk'];
-            if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $deskripsi_produk)){
+            if(!preg_match('/^(.*)/', $deskripsi_produk)){
                 $errors['deskripsi_produk'] = 'Deskripsi produk hanya berupa koma untuk memisahkan list';
             }
         }
@@ -89,14 +80,16 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
     <section class="container black-text">
         <h4 class= center>Tambah Produk</h4>
         <form class="white" action="create.php" method="POST">
-            <label>ID Produk:</label>
-            <input type="text" name="ID_produk" value="<?php echo htmlspecialchars ($ID_produk) ?>">
-            <div class="red-text"><?php echo $errors['ID_produk']; ?></div>
             <label>Nama Produk:</label>
             <input type="text" name="nama_produk" value="<?php echo htmlspecialchars ($nama_produk) ?>">
             <div class="red-text"><?php echo $errors['nama_produk']; ?></div>
             <label>Deskripsi Produk:</label>
-            <input type="text" name="deskripsi_produk" value="<?php echo htmlspecialchars ($deskripsi_produk) ?>">
+            <textarea class="input-control" name="deskripsi_produk" value="<?php echo htmlspecialchars ($deskripsi_produk) ?>"></textarea><br>
+            <select class="input-control" name="status">
+                    <option value="">--Pilih--</option>
+                    <option value="1">Aktif</option>
+                    <option value="0">Tidak Aktif</option>
+            </select>
             <div class="red-text"><?php echo $errors['deskripsi_produk']; ?></div>
             <label>Harga Produk</label>
             <input type="text" name="harga_produk" value="<?php echo htmlspecialchars ($harga_produk) ?>">

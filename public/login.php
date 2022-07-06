@@ -2,6 +2,44 @@
 //mengkoneksikan database dari file config db_connect
 include("template/config/db_connect.php");
 
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+	$username=$_POST["username"];
+	$password=$_POST["password"];
+
+
+	$sql="SELECT * FROM tabel_pelanggan WHERE username='".$username."' AND password='".$password."' ";
+
+	$result=mysqli_query($conn,$sql);
+
+	$row=mysqli_fetch_array($result);
+
+	if($row["role"]=="pelanggan")
+	{	
+
+		$_SESSION["username"]=$username;
+
+		header("Location: pelanggan/dashboard.php");
+	}
+
+	elseif($row["role"]=="admin")
+	{
+
+		$_SESSION["username"]=$username;
+		
+		header("Location: Admin/read.php");
+	}
+
+	else
+	{
+		echo "username or password incorrect";
+	}
+
+}
+
+
+
+
 ?>
 
 <link rel="stylesheet" href="template/css/style.css">
@@ -36,23 +74,6 @@ include("template/config/db_connect.php");
         <title>Document</title>
     </head>
     <body>
-        
-
-	<br/>
-	<!-- cek pesan notifikasi -->
-	<?php 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan'] == "gagal"){
-			echo "Login gagal! username dan password salah!";
-		}else if($_GET['pesan'] == "logout"){
-			echo "Anda telah berhasil logout";
-		}else if($_GET['pesan'] == "belum_login"){
-			echo "Anda harus login untuk mengakses halaman admin";
-		}
-	}
-	?>
-    
-
     
 <div class="div-countainer-fluid">
     <div class="row">
@@ -64,24 +85,24 @@ include("template/config/db_connect.php");
         <div class="container">
             <h4 class="my-6 text-center">Selamat Datang di F<span class="ur">ur</span>niture<span class="life">Life</span></h4>
                 <p class="my-5">Silahkan masukkan username dan password</p>
-                <form class="col s12" methode="post" action="cek_login.php">
+                <form class="col s12" action="cek_login.php" methode="POST">
                     <div class="row mb-3">
                         <label class="col-2 col-from-label align-self-center">Username</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="username" placeholder="username">
+                            <input type="text" class="form-control" name="username" placeholder="username" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-2 col-from-label align-self-center">Password</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="password" placeholder="password">
+                            <input type="text" class="form-control" name="password" placeholder="password" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-2"></div>
                         <div class="col-10">
-                            <input type="submit" class="btn brand z-depth-0" name="submit" value="login">
-                            <button type="button" class="btn brand-1 z-depth-0" onclick="window.history.back();">Sign Up</button>
+                            <input type="submit" class="btn brand z-depth-0" name="login" value="login">
+                            <!--<button type="button" class="btn brand-1 z-depth-0" onclick="window.history.back();">Sign Up</button>-->
                         </div>
                     </div>
                 </form>
@@ -89,20 +110,6 @@ include("template/config/db_connect.php");
     </div>
     </div>
 </div>
-
-<script type="text/javascript">
-	function validasi() {
-		var username = document.getElementById("username").value;
-		var password = document.getElementById("password").value;		
-		if (username != "" && password!="") {
-			return true;
-		}else{
-			alert('Username dan Password harus di isi !');
-			return false;
-		}
-	}
- 
-</script>
 
 </body>
 </html>

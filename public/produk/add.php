@@ -16,7 +16,7 @@ $errors = array('nama_produk'=>'','deskripsi_produk'=>'', 'harga_produk'=>'');
 
         //Memeriksa nama_produk
 		if(empty($_POST['nama_produk'])){
-			$errors['nama_produk'] = 'Nama produk dibutuhkan <br />';
+			$errors['nama_produk'] = 'Nama produk dibutuhkan <br/>';
 		} else{
 			$nama_produk = $_POST['nama_produk'];
 			if(!preg_match('/^[a-zA-Z\s]+$/', $nama_produk)){
