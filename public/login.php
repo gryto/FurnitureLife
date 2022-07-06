@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                         <div class="col-2"></div>
                         <div class="col-10">
                             <input type="submit" class="btn brand z-depth-0" name="login" value="login">
-                            <!--<button type="button" class="btn brand-1 z-depth-0" onclick="window.history.back();">Sign Up</button>-->
+                            <button type="button" class="btn brand-1 z-depth-0" onclick="window.history.back();">Sign Up</button>
                         </div>
                     </div>
                 </form>
