@@ -63,7 +63,13 @@ $sql = "SELECT * FROM tabel_produk WHERE ID_produk = '$ID_produk'";
             //menyimpan ke database dan mengecek
             if(mysqli_query($conn, $sql)){
                 //sukses
-                header('Location: ../dashboard.php');
+                //notifikasi ubah data dan kembali ke dasboard
+                echo "
+                <script>
+                alert('Data berhasil diubah')
+                document.location.href = 'read.php'
+                </script>
+                ";
             } else {
                 //err
                 echo 'query eror: ' . mysqli_error($conn);

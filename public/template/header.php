@@ -42,14 +42,14 @@
         <!-- membuat navbar mengubah warna menjadi abu - abu-->
         <nav class="white z-depth-0">
             <div class="container">
-                <a href="dashboard.php" class="brand-logo brand-text">F<span class="ur">ur</span>niture<span class="life">Life</span></a>
+                <a href="../../../../FurnitureLife/FurnitureLife/public/pelanggan/dashboard.php" class="brand-logo brand-text">F<span class="ur">ur</span>niture<span class="life">Life</span></a>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
                     <li><a href="login.php" class="btn brand-1 z-depth-0">Log Out</a></li>
                 </ul>
                 <!-- membuat navbar versi mobile -->
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="../Admin/create.php" class="btn brand z-depth-0">Tambah Produk</a></li>
+                    <li><a href="../../../../FurnitureLife/FurnitureLife/public/Admin/create.php" class="btn brand z-depth-0">Tambah Produk</a></li>
                 </ul>
             </div>
         </nav>

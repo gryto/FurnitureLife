@@ -10,7 +10,7 @@ if(isset($_REQUEST['delete'])){
 
     if(mysqli_query($conn, $sql)){
         //sukses
-        header('Location: ../dashboard.php');
+        header('Location: ../pelanggan/dashboard.php');
     } else{
         //gagal
         echo 'Query error: ' . mysqli_error($conn);

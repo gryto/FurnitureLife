@@ -43,17 +43,24 @@ if(isset($_POST['submit'])){
 $sql = "SELECT * FROM tabel_pelanggan WHERE username= '$username' && password = '$password'";
 
 // menghitung jumlah data yang ditemukan
-$mysqli_query = mysqli_num_rows($sql);
+//$mysqli_query = mysqli_num_rows($sql);
 
 //menyimpan ke database dan mengecek
 if(mysqli_query($conn, $sql)){
     //sukses
-    header('Location: dashboard.php');
-    echo "<script type='text/javascript'> alert('Login telah berhasil, admin'); window.location.herf='dashboard.php'; </script>";
+    echo "
+    <script>
+    alert('Login telah berhasil, pelanggan')
+    document.location.href = 'pelanggan/dashboard.php'
+    </script>
+    ";
 } else {
-    //error
-    header("location:index.php?pesan=gagal");
-    echo "<script type='text/javascript'> alert('Login telah berhasil, pelanggan'); window.location.herf='index.php'; </script>";
+    echo "
+    <script>
+    alert('Login telah berhasil, pelanggan')
+    document.location.href = 'Admin/read.php'
+    </script>
+    ";
 }
 
 ?>

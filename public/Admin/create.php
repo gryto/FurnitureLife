@@ -64,10 +64,17 @@ $errors = array('ID_produk'=>'','nama_produk'=>'','deskripsi_produk'=>'', 'harga
             //menyimpan ke database dan mengecek
             if(mysqli_query($conn, $sql)){
                 //sukses
-                header('Location: ../dashboard.php');
+                //notifikasi ubah data dan kembali ke dasboard
+                echo "
+                    <script>
+                    alert('Data berhasil diubah')
+                    document.location.href = 'read.php'
+                    </script>
+                    ";
             } else {
                 //err
                 echo 'query eror: ' . mysqli_error($conn);
+                
             }
         }
     } // akhir dari pemeriksaan dengan POST

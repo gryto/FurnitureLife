@@ -33,6 +33,15 @@ if(isset($_GET['ID_produk'])){
 
 <?php include('../template/header_produk.php')?>
 
+<?php  
+    function  confirmationBox() {  
+        echo '<script type="text/javascript"> ';  
+        echo 'var pesan = prompt("Masukkan pesan anda :", "");';  
+        echo 'alert(pesan);';  
+       echo '</script>';  
+}  
+?>  
+
 <div class="container center">
     <?php if($tabel_produks): ?>
         <div class="row">
@@ -45,19 +54,23 @@ if(isset($_GET['ID_produk'])){
                 </form>
             </div>
             <div class="col s12">
-                <!-- Menghapus Form -->
+                <!-- Membeli Form -->
                 <form action="details.php" methode="REQUEST">
                 <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
                 <input type="submit" name="buy" value="buy" class="btn brand z-depth-0">
                 </form>
             </div>
         </div>
-    <?php else: ?>
-
-        <h5>Mohon maaf. Tidak ada produk yang tersedia.</h5>
-
+    <?php else: 
+        //notifikasi beli dan kembali ke dasboard
+        echo "
+        <script>
+        alert('Produk berhasil dibeli')
+        document.location.href = 'dashboard.php'
+        </script>
+        ";    
+        ?>
     <?php endif; ?>
-
 
 </div>
 

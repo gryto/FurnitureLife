@@ -82,7 +82,7 @@ include "../template/header.php";
                                         <!-- Menghapus Form -->
                                         <form action="delete.php" methode="REQUEST">
                                             <input type="hidden" name="id_to_delete" value="<?php echo $tabel_produks['ID_produk'] ?>">
-                                            <input type="submit" name="delete" value="Delete" class="btn brand-1 z-depth-0 waves-effect">
+                                            <input type="submit" name="delete" value="Delete" onclick="return confirm('Apakah anda yakin ingin menghapus ini ?')" class="btn brand-1 z-depth-0 waves-effect">
                                         </form>
                                     </div>
                                     <div class="col s5">
