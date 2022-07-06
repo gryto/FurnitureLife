@@ -10,7 +10,13 @@ if(isset($_REQUEST['delete'])){
 
     if(mysqli_query($conn, $sql)){
         //sukses
-        header('Location: ../pelanggan/dashboard.php');
+        echo "
+        <script>
+        alert('Data berhasil dihapus')
+        document.location.href = '../dashboard.php'
+        </script>
+        ";
+        header('Location: ../dashboard.php');
     } else{
         //gagal
         echo 'Query error: ' . mysqli_error($conn);

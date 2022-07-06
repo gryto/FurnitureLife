@@ -38,8 +38,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 }
 
 
-
-
 ?>
 
 <link rel="stylesheet" href="template/css/style.css">
@@ -64,15 +62,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             color: #f7b71e !important;
         }
     </style>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
     <body>
     
 <div class="div-countainer-fluid">
@@ -101,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     <div class="row mb-3">
                         <div class="col-2"></div>
                         <div class="col-10">
-                            <input type="submit" class="btn brand z-depth-0" name="login" value="login">
+                            <input type="submit" class="btn brand z-depth-0" name="login" value="login" >
                             <button type="button" class="btn brand-1 z-depth-0" onclick="window.history.back();">Sign Up</button>
                         </div>
                     </div>
