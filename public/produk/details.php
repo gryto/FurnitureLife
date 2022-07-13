@@ -21,7 +21,6 @@ if(isset($_GET['ID_produk'])){
     mysqli_free_result($result);
     mysqli_close($conn);
 
-
 }
 
 ?>
